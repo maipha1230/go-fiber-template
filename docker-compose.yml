@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  postgresql:
+    image: postgres:latest
+    container_name: postgresql_db_go
+    restart: always
+    environment:
+      POSTGRES_USER: maiz 
+      POSTGRES_PASSWORD: maiz1234
+      POSTGRES_DB: go-prac
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data
+
+volumes:
+  postgresql_data:
